@@ -8,3 +8,12 @@
 body {
 	background-color: #171524;
 }
+
+#content {
+  max-width: 20rem;
+}
+
+.search-button {
+  width: 2rem;
+  height: 2rem;
+}
