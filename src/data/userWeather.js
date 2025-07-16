@@ -1,15 +1,17 @@
 import getAPIData from "./fetchAPI";
 import getUserLocation from "./userLocation"
 
-const getWeatherForUser = async () => {
-	try {
-		const { latitude, longitude } = await getUserLocation();
-		const locationString = `${latitude},${longitude}`;
-		return await getAPIData(locationString);
-	} catch (error) {
-		console.error("Could not get user location:", error);
-		return await getAPIData("Paris"); // fallback
-	}
-}
+export const getInitialWeather = async () => {
+  try {
+    const { latitude, longitude } = await getUserLocation();
+    return await getAPIData(`${latitude},${longitude}`);
 
-export default getWeatherForUser;
+  } catch (error) {
+    console.error("Geolocation failed, using fallback", error);
+    return await getAPIData("Paris"); // Fallback
+  }
+};
+
+export const getWeatherBySearch = async (searchTerm) => {
+  return await getAPIData(searchTerm);
+}
