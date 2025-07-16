@@ -14,25 +14,25 @@ export const WEATHER_ICONS = {
   BOLT: "las la-bolt",
   CLOUD_HAIL: "las la-cloud-hail",
   TORNADO: "las la-tornado",
-  UNKNOWN: "las la-question-circle"
+  UNKNOWN: "las la-question-circle",
 };
 
 export const getWeatherIcon = (condition) => {
   const iconMap = {
     "clear-day": WEATHER_ICONS.SUN,
     "clear-night": WEATHER_ICONS.MOON,
-    "rain": WEATHER_ICONS.RAIN,
-    "snow": WEATHER_ICONS.SNOWFLAKE,
-    "sleet": WEATHER_ICONS.CLOUD_MEATBALL,
-    "wind": WEATHER_ICONS.WIND,
-    "fog": WEATHER_ICONS.SMOG,
-    "cloudy": WEATHER_ICONS.CLOUD,
+    rain: WEATHER_ICONS.RAIN,
+    snow: WEATHER_ICONS.SNOWFLAKE,
+    sleet: WEATHER_ICONS.CLOUD_MEATBALL,
+    wind: WEATHER_ICONS.WIND,
+    fog: WEATHER_ICONS.SMOG,
+    cloudy: WEATHER_ICONS.CLOUD,
     "partly-cloudy-day": WEATHER_ICONS.CLOUD_SUN,
     "partly-cloudy-night": WEATHER_ICONS.CLOUD_MOON,
-    "thunderstorm": WEATHER_ICONS.BOLT,
-    "hail": WEATHER_ICONS.CLOUD_HAIL,
-    "tornado": WEATHER_ICONS.TORNADO
+    thunderstorm: WEATHER_ICONS.BOLT,
+    hail: WEATHER_ICONS.CLOUD_HAIL,
+    tornado: WEATHER_ICONS.TORNADO,
   };
-  
+
   return iconMap[condition] || WEATHER_ICONS.UNKNOWN;
 };

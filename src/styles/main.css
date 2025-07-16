@@ -10,10 +10,10 @@ body {
 }
 
 #content {
-  max-width: 20rem;
+	max-width: 20rem;
 }
 
 .search-button {
-  width: 2rem;
-  height: 2rem;
+	width: 2rem;
+	height: 2rem;
 }

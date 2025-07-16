@@ -13,6 +13,6 @@ const createFooter = () => {
   footerContainer.appendChild(footerText);
 
   footerDiv.appendChild(footerContainer);
-}
+};
 
 export default createFooter;

@@ -1,8 +1,7 @@
 // Pseudocode for planning the layout
 import { WEATHER_ICONS } from "../assets/icons/icons";
 
-headerProperties =
-{
+headerProperties = {
   city: "Paris",
   temp: 23,
   condition: "Sunny",
@@ -10,18 +9,17 @@ headerProperties =
   feels_like: 25,
   high_low: {
     high: 26,
-    low: 18
-  }
-}
+    low: 18,
+  },
+};
 
 // Visual layout would be something like
-headerHTML =
-`
+headerHTML = `
 [City Name] (space-between) [Last Updated]
 [Weather Icon] [Current Temp] [Condition]
 "Feels like [X]"
 H: [Y] L: [Z]
-`
+`;
 
 // Then we can jump into something more complex about today specifically
 // Add a whole section with more information about the current day

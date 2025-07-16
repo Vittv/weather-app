@@ -8,8 +8,10 @@ const getAPIData = async (city) => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Weather data not found: ${response.status} ${errorText}`);
+      const errorText = await response.text();
+      throw new Error(
+        `Weather data not found: ${response.status} ${errorText}`,
+      );
     }
     const data = await response.json();
     return data;

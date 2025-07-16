@@ -8,10 +8,10 @@ const getUserLocation = () => {
         },
         (error) => {
           reject(error);
-        }
+        },
       );
     } else {
-        reject(new Error("Geolocation not supported"));
+      reject(new Error("Geolocation not supported"));
     }
   });
 };

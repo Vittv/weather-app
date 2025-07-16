@@ -1,3 +1,3 @@
 export function init(container) {
-	container.innerHTML = "";
+  container.innerHTML = "";
 }
