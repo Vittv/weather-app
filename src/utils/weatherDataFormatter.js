@@ -1,4 +1,5 @@
 import { getInitialWeather, getWeatherBySearch } from "../data/userWeather";
+import { getWeatherIcon } from "../assets/icons/icons";
 
 export const fetchFormattedWeather = async (location = null) => {
   try {
@@ -21,7 +22,7 @@ const formatCurrentWeather = (data) => ({
   city: data.resolvedAddress || data.address,
   currentTemp: Math.round(data.currentConditions.temp),
   condition: data.currentConditions.conditions,
-  icon: mapConditionToIcon(data.currentConditions.icon),
+  icon: getWeatherIcon(data.currentConditions.icon),
   feelsLike: Math.round(data.currentConditions.feelslike),
   high: Math.round(data.days[0].tempmax),
   low: Math.round(data.days[0].tempmin),
@@ -36,7 +37,7 @@ const formatTodayDetails = (data) => ({
   hours: data.days[0].hours.map((hour) => ({
     time: formatHour(hour.datetime),
     temp: Math.round(hour.temp),
-    icon: mapConditionToIcon(hour.icon),
+    icon: getWeatherIcon(data.currentConditions.icon),
     precip: hour.precip,
   })),
   details: {
@@ -57,27 +58,10 @@ const format10DayForecast = (data) =>
     }),
     high: Math.round(day.tempmax),
     low: Math.round(day.tempmin),
-    icon: mapConditionToIcon(day.icon),
+    icon: getWeatherIcon(data.currentConditions.icon),
     condition: day.conditions,
     precip: day.precip,
   }));
-
-const mapConditionToIcon = (condition) => {
-  const iconMap = {
-    "clear-day": "las la-sun",
-    "clear-night": "las la-moon",
-    rain: "las la-cloud-rain",
-    snow: "las la-snowflake",
-    sleet: "las la-cloud-meatball",
-    wind: "las la-wind",
-    fog: "las la-smog",
-    cloudy: "las la-cloud",
-    "partly-cloudy-day": "las la-cloud-sun",
-    "partly-cloudy-night": "las la-cloud-moon",
-    thunderstorm: "las la-bolt",
-  };
-  return iconMap[condition] || "las la-question-circle";
-};
 
 const formatTime = (timeStr) => timeStr.slice(0, 5);
 const formatHour = (datetime) => new Date(datetime).getHours() + ":00";
