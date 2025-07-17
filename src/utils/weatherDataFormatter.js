@@ -7,6 +7,8 @@ export const fetchFormattedWeather = async (location = null) => {
       ? await getWeatherBySearch(location)
       : await getInitialWeather();
 
+    if (!apiData?.days) throw new Error("Invalid API response");
+
     return {
       current: formatCurrentWeather(apiData),
       today: formatTodayDetails(apiData),
@@ -37,7 +39,7 @@ const formatTodayDetails = (data) => ({
   hours: data.days[0].hours.map((hour) => ({
     time: formatHour(hour.datetime),
     temp: Math.round(hour.temp),
-    icon: getWeatherIcon(data.currentConditions.icon),
+    icon: getWeatherIcon(hour.icon),
     precip: hour.precip,
   })),
   details: {
@@ -58,7 +60,7 @@ const format10DayForecast = (data) =>
     }),
     high: Math.round(day.tempmax),
     low: Math.round(day.tempmin),
-    icon: getWeatherIcon(data.currentConditions.icon),
+    icon: getWeatherIcon(day.icon),
     condition: day.conditions,
     precip: day.precip,
   }));
