@@ -1,4 +1,4 @@
-import { getWeatherBySearch } from "../data/userWeather";
+import { getSearchedLocationWeather } from "../services/weatherService";
 
 const createSearchBar = () => {
   const searchBarDiv = document.createElement("div");
@@ -44,7 +44,7 @@ const createSearchBar = () => {
       searchBar.disabled = true;
       searchIcon.classList.add("loading");
 
-      const weatherData = await getWeatherBySearch(searchTerm);
+      const weatherData = await getSearchedLocationWeather(searchTerm);
       console.log("Weather Data Received:", weatherData);
     } catch (error) {
       console.error("Fetch error:", error);
