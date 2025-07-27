@@ -1,4 +1,6 @@
 import { getAPIData } from "../services/weather";
+import { createSearchForm } from "../components/search";
+import { renderWeather } from "./display";
 
 export const init = (container) => {
   container.innerHTML = "";
@@ -7,20 +9,7 @@ export const init = (container) => {
   weatherApp.className = "weather-app";
   container.appendChild(weatherApp);
 
-  const searchForm = document.createElement("form");
-  searchForm.className = "search-form";
-
-  const cityInput = document.createElement("input");
-  cityInput.type = "text";
-  cityInput.className = "city-input";
-  cityInput.placeholder = "Enter city";
-
-  const searchButton = document.createElement("button");
-  searchButton.type = "submit";
-  searchButton.textContent = "Search";
-
-  searchForm.appendChild(cityInput);
-  searchForm.appendChild(searchButton);
+  const { searchForm, cityInput } = createSearchForm();
   weatherApp.appendChild(searchForm);
 
   const weatherContainer = document.createElement("div");
@@ -42,7 +31,7 @@ export const init = (container) => {
 };
 
 const loadWeatherData = async (city, container) => {
-  container.innerHTML = '<div class="loading">Loading weather data...</div>';
+  container.innerHTML = `<div class="loading">Loading weather data...</div>`;
 
   try {
     const data = await getAPIData(city);
@@ -52,39 +41,10 @@ const loadWeatherData = async (city, container) => {
       return;
     }
 
+    console.log(data);
     renderWeather(data, container);
   } catch (error) {
     container.innerHTML = `<div class="error">Failed to load weather data</div>`;
     console.error("Error loading weather:", error);
   }
-};
-
-const renderWeather = (data, container) => {
-  const currentWeather = document.createElement("div");
-  currentWeather.className = "current-weather";
-
-  const heading = document.createElement("h2");
-  heading.textContent = `${data.resolvedAddress}`;
-
-  const weatherDetails = document.createElement("div");
-  weatherDetails.className = "weather-details";
-
-  const temp = document.createElement("div");
-  temp.className = "temp";
-  temp.textContent = `${Math.round(data.currentConditions.temp)}°C`;
-
-  const conditions = document.createElement("div");
-  conditions.className = "conditions";
-
-  const conditionsText = document.createElement("span");
-  conditionsText.textContent = data.currentConditions.conditions;
-
-  conditions.appendChild(conditionsText);
-  weatherDetails.appendChild(temp);
-  weatherDetails.appendChild(conditions);
-  currentWeather.appendChild(heading);
-  currentWeather.appendChild(weatherDetails);
-
-  container.innerHTML = "";
-  container.appendChild(currentWeather);
 };
