@@ -1,5 +1,5 @@
 export const getWeatherIcon = (iconName) => {
-  return `../assets/icons/${iconName}.svg`;
+  return `/icons/${iconName}.svg`;
 };
 
 export const formatTime = (timeString) => {

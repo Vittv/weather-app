@@ -19,6 +19,7 @@ export const renderCurrentWeather = (data) => {
 
   const conditionsText = document.createElement("span");
   conditionsText.textContent = data.currentConditions.conditions;
+
   const icon = document.createElement("img");
   icon.src = getWeatherIcon(data.currentConditions.icon);
   icon.alt = data.currentConditions.conditions;
