@@ -2,7 +2,7 @@ const API_KEY = "XJYNGADYZBBDTMFHP9KJJ54EM";
 
 export const getAPIData = async (city) => {
   if (!city || typeof city !== "string") return null;
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(city)}/next10days?unitGroup=metric&include=current&key=${API_KEY}`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(city)}/next10days?unitGroup=metric&include=current&iconSet=icons2&key=${API_KEY}`;
 
   try {
     const response = await fetch(url);
