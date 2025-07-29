@@ -7,7 +7,7 @@ export const renderForecast = (data) => {
   forecastSection.className = "forecast-section";
 
   const forecastHeading = document.createElement("h3");
-  forecastHeading.textContent = "10-Day Forecast";
+  forecastHeading.textContent = "Next days";
   forecastSection.appendChild(forecastHeading);
 
   const forecastContainer = document.createElement("div");
