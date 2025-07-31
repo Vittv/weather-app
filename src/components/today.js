@@ -1,4 +1,10 @@
 import { formatTime, createDetailItem } from "../utils/helpers";
+import {
+  convertTemp,
+  convertSpeed,
+  getTemperatureUnitSymbol,
+  getSpeedUnit,
+} from "../utils/units";
 
 // Helper function to safely add a detail item if the value exists
 const addDetailIfAvailable = (grid, label, value, unit = "", round = false) => {
@@ -25,18 +31,30 @@ export const renderTodayDetails = (data) => {
   addDetailIfAvailable(
     detailsGrid,
     "Feels Like",
-    current.feelslike,
-    "°C",
+    convertTemp(current.feelslike),
+    getTemperatureUnitSymbol(),
     true,
   );
   addDetailIfAvailable(detailsGrid, "Humidity", current.humidity, "%");
-  addDetailIfAvailable(detailsGrid, "High", todayForecast.tempmax, "°C", true);
-  addDetailIfAvailable(detailsGrid, "Low", todayForecast.tempmin, "°C", true);
+  addDetailIfAvailable(
+    detailsGrid,
+    "High",
+    convertTemp(todayForecast.tempmax),
+    getTemperatureUnitSymbol(),
+    true,
+  );
+  addDetailIfAvailable(
+    detailsGrid,
+    "Low",
+    convertTemp(todayForecast.tempmin),
+    getTemperatureUnitSymbol(),
+    true,
+  );
   addDetailIfAvailable(
     detailsGrid,
     "Wind Speed",
-    current.windspeed,
-    " km/h",
+    convertSpeed(current.windspeed),
+    getSpeedUnit(),
     true,
   );
   addDetailIfAvailable(detailsGrid, "Wind Direction", current.winddir, "°");
@@ -55,7 +73,7 @@ export const renderTodayDetails = (data) => {
 
   todaySection.appendChild(detailsGrid);
 
-  // Sunrise / Sunset 
+  // Sunrise / Sunset
   if (current.sunrise && current.sunset) {
     const sunTimes = document.createElement("div");
     sunTimes.className = "sun-times";

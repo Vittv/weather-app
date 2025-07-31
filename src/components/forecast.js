@@ -1,4 +1,10 @@
 import { getWeatherIcon } from "../utils/helpers";
+import {
+  convertTemp,
+  convertSpeed,
+  getTemperatureUnitSymbol,
+  getSpeedUnit,
+} from "../utils/units";
 
 export const renderForecast = (data) => {
   if (!data.days || data.days.length === 0) return null;
@@ -39,8 +45,8 @@ export const renderForecast = (data) => {
     const dayTemp = document.createElement("div");
     dayTemp.className = "day-temp";
     dayTemp.innerHTML = `
-      <span class="temp-max">${Math.round(day.tempmax)}°</span>
-      <span class="temp-min">${Math.round(day.tempmin)}°</span>
+      <span class="temp-max">${convertTemp(day.tempmax)}${getTemperatureUnitSymbol()}</span>
+      <span class="temp-min">${convertTemp(day.tempmin)}${getTemperatureUnitSymbol()}</span>
     `;
 
     const dayDetails = document.createElement("div");
@@ -48,7 +54,7 @@ export const renderForecast = (data) => {
     dayDetails.innerHTML = `
       <div class="precip">Precip. ${day.precip} mm</div>
       <div class="humidity">Humidity ${day.humidity}%</div>
-      <div class="wind">Wind ${Math.round(day.windspeed)} km/h</div>
+      <div class="wind">Wind ${convertSpeed(day.windspeed)} ${getSpeedUnit()}</div>
     `;
 
     forecastDay.appendChild(dayHeader);
