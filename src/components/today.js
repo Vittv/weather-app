@@ -61,6 +61,13 @@ export const renderTodayDetails = (data) => {
   addDetailIfAvailable(detailsGrid, "Pressure", current.pressure, " hPa", true);
   addDetailIfAvailable(detailsGrid, "UV Index", current.uvindex);
   addDetailIfAvailable(detailsGrid, "Cloud Cover", current.cloudcover, "%");
+  addDetailIfAvailable(
+    detailsGrid,
+    "Dew",
+    convertTemp(current.dew),
+    getTemperatureUnitSymbol(),
+    true
+  );
 
   if (todayForecast) {
     if (todayForecast.description) {

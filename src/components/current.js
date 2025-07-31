@@ -21,8 +21,8 @@ export const renderCurrentWeather = (data) => {
   icon.alt = data.currentConditions.conditions;
   icon.className = "weather-icon";
 
-  weatherDetails.appendChild(temp);
   weatherDetails.appendChild(icon);
+  weatherDetails.appendChild(temp);
   currentWeather.appendChild(weatherDetails);
 
   const conditions = document.createElement("div");
