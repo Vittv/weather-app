@@ -1,4 +1,3 @@
-import { getWeatherIcon } from "../utils/helpers";
 import {
   convertTemp,
   convertSpeed,
@@ -37,8 +36,8 @@ export const renderForecast = (data) => {
       <span class="day-number">${dayNumber}</span>
     `;
 
-    const dayIcon = document.createElement("img");
-    dayIcon.src = getWeatherIcon(day.icon);
+    let dayIcon = document.createElement("img");
+    dayIcon.src = require(`../assets/icons/${day.icon}.svg`);
     dayIcon.alt = day.conditions;
     dayIcon.className = "forecast-icon";
 

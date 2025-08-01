@@ -1,4 +1,3 @@
-import { getWeatherIcon } from "../utils/helpers";
 import { convertTemp, getTemperatureUnitSymbol } from "../utils/units";
 
 export const renderCurrentWeather = (data) => {
@@ -16,8 +15,8 @@ export const renderCurrentWeather = (data) => {
   const temp = document.createElement("div");
   temp.className = "temp";
   temp.textContent = `${convertTemp(data.currentConditions.temp)}${getTemperatureUnitSymbol()}`;
-  const icon = document.createElement("img");
-  icon.src = getWeatherIcon(data.currentConditions.icon);
+  let icon = document.createElement("img");
+  icon.src = require(`../assets/icons/${data.currentConditions.icon}.svg`);
   icon.alt = data.currentConditions.conditions;
   icon.className = "weather-icon";
 
