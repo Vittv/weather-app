@@ -196,7 +196,7 @@ img {
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--subtle-blue-text-color);
+  color: #8a97a3;
 }
 
 .details-grid {
@@ -225,7 +225,7 @@ img {
 .detail-label {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--main-subtle-text-color);
+  color: #7e7e7e;
 }
 
 .detail-value {
@@ -242,7 +242,104 @@ img {
 /* next days */
 
 .forecast-section {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
+}
+
+.forecast-section h3 {
+  text-align: left;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #6a6a6a;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.forecast-container {
+  display: flex;
+  padding: 2rem 0;
+  overflow-x: auto;
+  gap: 1rem;
+  border-top: 1px solid var(--main-border-color)
+}
+
+.forecast-day {
+  flex-shrink: 0;
+  padding: 1rem;
+  width: 12rem;
+  text-align: center;
+  background-color: #fbfbfb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+  transform: translateY(-2px);
+}
+
+.day-header span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2e4460;
+}
+
+.day-temp {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+.temp-max {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2e4460;
+}
+
+.temp-min {
+  font-size: 1.2rem;
+  color: #6a6a6a;
+}
+
+.precip,
+.humidity,
+.wind {
+  color: var(--main-subtle-text-color);
+}
+
+/* loading and error */
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 200;
+  color: #303439;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-background-color) var(--main-border-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--main-border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-background-color);
+  border-radius: 4px;
+  border: 2px solid var(--main-border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-subtle-text-color);
 }
 
 /* responsiveness */
