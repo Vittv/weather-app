@@ -66,7 +66,7 @@ export const renderTodayDetails = (data) => {
     "Dew",
     convertTemp(current.dew),
     getTemperatureUnitSymbol(),
-    true
+    true,
   );
 
   if (todayForecast) {

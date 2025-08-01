@@ -1,350 +1,352 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  font-family:
-    "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --main-background-color: #f3f3f3;
-  --main-border-color: #d5d5d5;
-  --main-hover-color: #555;
-  --main-subtle-text-color: #6a6a6a;
-  --subtle-blue-text-color: #2e4460;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family:
+		"Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	--main-background-color: #f3f3f3;
+	--main-border-color: #d5d5d5;
+	--main-hover-color: #555;
+	--main-subtle-text-color: #6a6a6a;
+	--subtle-blue-text-color: #2e4460;
 }
 
 body {
-  background-color: var(--main-background-color);
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+	background-color: var(--main-background-color);
+	padding: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 img {
-  width: 3rem;
-  height: 3rem;
+	width: 3rem;
+	height: 3rem;
 }
 
 /* weather app */
 .weather-app {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 .weather-container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--main-background-color);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	background-color: var(--main-background-color);
+	box-shadow:
+		0 10px 15px -3px rgba(0, 0, 0, 0.1),
+		0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .search-form {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0.5rem;
-  background-color: var(--main-background-color);
-  border-bottom: 1px solid var(--main-border-color);
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0.5rem;
+	background-color: var(--main-background-color);
+	border-bottom: 1px solid var(--main-border-color);
 }
 
 .city-input {
-  flex-grow: 1;
-  min-width: 0;
-  border: none;
-  outline: none;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  color: #2e4460;
+	flex-grow: 1;
+	min-width: 0;
+	border: none;
+	outline: none;
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;
+	background-color: transparent;
+	color: #2e4460;
 }
 
 .city-input::placeholder {
-  color: #a0a0a0;
+	color: #a0a0a0;
 }
 
 /* buttons */
 .search-form button {
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.2 ease;
-  flex-shrink: 0;
-  border-radius: 9999px;
-  background-color: inherit;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition: 0.2 ease;
+	flex-shrink: 0;
+	border-radius: 9999px;
+	background-color: inherit;
 }
 
 .search-form .search-button {
-  color: #333;
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease 0.2s;
+	color: #333;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: ease 0.2s;
 }
 
 .search-form .search-button:hover {
-  color: #555;
+	color: #555;
 }
 
 .search-form .search-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+	width: 1.25rem;
+	height: 1.25rem;
 }
 
 .unit-toggle {
-  background-color: inherit;
-  color: #333;
-  padding: 0.75rem 1.25rem;
-  transition: 0.2s ease;
+	background-color: inherit;
+	color: #333;
+	padding: 0.75rem 1.25rem;
+	transition: 0.2s ease;
 }
 
 .unit-toggle:hover {
-  color: #555;
+	color: #555;
 }
 
 .github-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  background-color: inherit;
-  border-radius: 9999px;
-  flex-shrink: 0;
-  text-decoration: none;
-  transition: ease 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	background-color: inherit;
+	border-radius: 9999px;
+	flex-shrink: 0;
+	text-decoration: none;
+	transition: ease 0.2s;
 }
 
 .github-icon {
-  width: 2rem;
-  height: 2rem;
-  fill: #333;
-  transition: 0.2s ease;
+	width: 2rem;
+	height: 2rem;
+	fill: #333;
+	transition: 0.2s ease;
 }
 
 .github-icon:hover {
-  fill: #555;
+	fill: #555;
 }
 
 /* main content */
 .current-weather {
-  width: 100%;
-  padding: 2rem 0;
-  background-color: var(--main-background-color);
-  display: flex;
-  flex-direction: column;
+	width: 100%;
+	padding: 2rem 0;
+	background-color: var(--main-background-color);
+	display: flex;
+	flex-direction: column;
 
-  border-bottom: 1px solid var(--main-border-color);
+	border-bottom: 1px solid var(--main-border-color);
 }
 
 .weather-details {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 0;
 }
 
 .location-text {
-  padding-left: 1rem;
-  text-align: center;
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: #2e4460;
-  margin-bottom: 0.5rem;
+	padding-left: 1rem;
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 300;
+	color: #2e4460;
+	margin-bottom: 0.5rem;
 }
 
 .weather-icon {
-  width: 10rem;
-  height: 10rem;
+	width: 10rem;
+	height: 10rem;
 }
 
 .temp {
-  font-size: 4rem;
-  font-weight: 300;
-  color: #2e4460;
+	font-size: 4rem;
+	font-weight: 300;
+	color: #2e4460;
 }
 
 .conditions {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #6a6a6a;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: #6a6a6a;
 }
 
 /* today */
 .today-section {
-  padding: 2rem 1rem;
-  border-bottom: 1px solid var(--main-border-color);
+	padding: 2rem 1rem;
+	border-bottom: 1px solid var(--main-border-color);
 }
 
 .today-section h3 {
-  text-align: left;
-  font-size: 1.7rem;
-  font-weight: 300;
-  color: #6a6a6a;
-  width: 100%;
+	text-align: left;
+	font-size: 1.7rem;
+	font-weight: 300;
+	color: #6a6a6a;
+	width: 100%;
 }
 
 .day-description {
-  padding: 2rem 0;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #8a97a3;
+	padding: 2rem 0;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 400;
+	font-style: italic;
+	color: #8a97a3;
 }
 
 .details-grid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 .detail-item {
-  width: 50%;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  background-color: #f5f5f5;
-  border-left: 2px solid #007bff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+	width: 50%;
+	padding: 1rem;
+	margin: 0.5rem 0;
+	background-color: #f5f5f5;
+	border-left: 2px solid #007bff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	transition: transform 0.2s ease;
 }
 
 .detail-item:hover {
-  transform: translateY(-2px);
+	transform: translateY(-2px);
 }
 
 .detail-label {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #7e7e7e;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #7e7e7e;
 }
 
 .detail-value {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #2e4460;
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #2e4460;
 }
 
 .sun-times {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* next days */
 
 .forecast-section {
-  padding: 1rem 1rem;
+	padding: 1rem 1rem;
 }
 
 .forecast-section h3 {
-  text-align: left;
-  font-size: 1.7rem;
-  font-weight: 300;
-  color: #6a6a6a;
-  width: 100%;
-  padding: 2rem 0;
+	text-align: left;
+	font-size: 1.7rem;
+	font-weight: 300;
+	color: #6a6a6a;
+	width: 100%;
+	padding: 2rem 0;
 }
 
 .forecast-container {
-  display: flex;
-  padding: 2rem 0;
-  overflow-x: auto;
-  gap: 1rem;
-  border-top: 1px solid var(--main-border-color)
+	display: flex;
+	padding: 2rem 0;
+	overflow-x: auto;
+	gap: 1rem;
+	border-top: 1px solid var(--main-border-color);
 }
 
 .forecast-day {
-  flex-shrink: 0;
-  padding: 1rem;
-  width: 12rem;
-  text-align: center;
-  background-color: #fbfbfb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
+	flex-shrink: 0;
+	padding: 1rem;
+	width: 12rem;
+	text-align: center;
+	background-color: #fbfbfb;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease;
 }
 
 .forecast-day:hover {
-  transform: translateY(-2px);
+	transform: translateY(-2px);
 }
 
 .day-header span {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #2e4460;
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: #2e4460;
 }
 
 .day-temp {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  font-weight: 300;
-  margin: 0.5rem 0;
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	font-weight: 300;
+	margin: 0.5rem 0;
 }
 
 .temp-max {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #2e4460;
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #2e4460;
 }
 
 .temp-min {
-  font-size: 1.2rem;
-  color: #6a6a6a;
+	font-size: 1.2rem;
+	color: #6a6a6a;
 }
 
 .precip,
 .humidity,
 .wind {
-  color: var(--main-subtle-text-color);
+	color: var(--main-subtle-text-color);
 }
 
 /* loading and error */
 .loading,
 .error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: 200;
-  color: #303439;
-  width: 100%;
-  padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3rem;
+	font-weight: 200;
+	color: #303439;
+	width: 100%;
+	padding: 2rem;
 }
 
 /* scrollbar */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: var(--main-background-color) var(--main-border-color);
+	scrollbar-width: thin;
+	scrollbar-color: var(--main-background-color) var(--main-border-color);
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: var(--main-border-color);
+	width: 8px;
+	height: 8px;
+	background-color: var(--main-border-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--main-background-color);
-  border-radius: 4px;
-  border: 2px solid var(--main-border-color);
+	background-color: var(--main-background-color);
+	border-radius: 4px;
+	border: 2px solid var(--main-border-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--main-subtle-text-color);
+	background-color: var(--main-subtle-text-color);
 }
 
 /* responsiveness */
 @media (max-width: 768px) {
-  .detail-item {
-    width: 100%;
-  }
+	.detail-item {
+		width: 100%;
+	}
 }
