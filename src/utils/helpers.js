@@ -1,7 +1,5 @@
-const repoName = "weather-app";
-
 export const getWeatherIcon = (iconName) => {
-  return `${repoName}/icons/${iconName}.svg`;
+  return `./icons/${iconName}.svg`;
 };
 
 export const formatTime = (timeString) => {
