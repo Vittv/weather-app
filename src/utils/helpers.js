@@ -1,5 +1,9 @@
 export const getWeatherIcon = (iconName) => {
-  return `./icons/${iconName}.svg`;
+  const basePath = window.location.pathname.startsWith("/weather-app")
+    ? "/weather-app"
+    : "";
+
+  return `${basePath}/icons/${iconName}.svg`;
 };
 
 export const formatTime = (timeString) => {
