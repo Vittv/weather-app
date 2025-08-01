@@ -12,4 +12,4 @@ A simple weather app.
 - 10 day forecast
 - Unit conversion (C to F - km/h to mph)
 
-![App Screenshot](assets/weather-app-preview.png)
+![App Screenshot](src/assets/weather-app-preview.png)
